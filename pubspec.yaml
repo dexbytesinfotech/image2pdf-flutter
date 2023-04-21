@@ -1,5 +1,5 @@
 name: image2pdf_flutter
-description: A Flutter plugin that exposes device specific speech to text recognition.
+description: A Flutter plugin that convert images to PDF.
 version: 1.0.0
 homepage: https://github.com/dexbytes
 repository: https://github.com/dexbytesinfotech/image2pdf-flutter.git

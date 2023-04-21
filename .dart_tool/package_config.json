@@ -3,7 +3,7 @@
   "packages": [
     {
       "name": "archive",
-      "rootUri": "file:///Users/apple/.pub-cache/hosted/pub.dev/archive-3.3.6",
+      "rootUri": "file:///Users/apple/.pub-cache/hosted/pub.dev/archive-3.3.7",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -33,9 +33,9 @@
     },
     {
       "name": "camera",
-      "rootUri": "file:///Users/apple/.pub-cache/hosted/pub.dev/camera-0.10.3+2",
+      "rootUri": "file:///Users/apple/.pub-cache/hosted/pub.dev/camera-0.10.4",
       "packageUri": "lib/",
-      "languageVersion": "2.14"
+      "languageVersion": "2.18"
     },
     {
       "name": "camera_android",
@@ -207,7 +207,7 @@
     },
     {
       "name": "intl",
-      "rootUri": "file:///Users/apple/.pub-cache/hosted/pub.dev/intl-0.18.0",
+      "rootUri": "file:///Users/apple/.pub-cache/hosted/pub.dev/intl-0.18.1",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -267,15 +267,15 @@
     },
     {
       "name": "path_provider_android",
-      "rootUri": "file:///Users/apple/.pub-cache/hosted/pub.dev/path_provider_android-2.0.24",
+      "rootUri": "file:///Users/apple/.pub-cache/hosted/pub.dev/path_provider_android-2.0.25",
       "packageUri": "lib/",
       "languageVersion": "2.17"
     },
     {
       "name": "path_provider_foundation",
-      "rootUri": "file:///Users/apple/.pub-cache/hosted/pub.dev/path_provider_foundation-2.2.1",
+      "rootUri": "file:///Users/apple/.pub-cache/hosted/pub.dev/path_provider_foundation-2.2.2",
       "packageUri": "lib/",
-      "languageVersion": "2.17"
+      "languageVersion": "2.18"
     },
     {
       "name": "path_provider_linux",
@@ -321,7 +321,7 @@
     },
     {
       "name": "pointycastle",
-      "rootUri": "file:///Users/apple/.pub-cache/hosted/pub.dev/pointycastle-3.7.2",
+      "rootUri": "file:///Users/apple/.pub-cache/hosted/pub.dev/pointycastle-3.7.3",
       "packageUri": "lib/",
       "languageVersion": "2.14"
     },
@@ -363,13 +363,13 @@
     },
     {
       "name": "shared_preferences_android",
-      "rootUri": "file:///Users/apple/.pub-cache/hosted/pub.dev/shared_preferences_android-2.1.0",
+      "rootUri": "file:///Users/apple/.pub-cache/hosted/pub.dev/shared_preferences_android-2.1.2",
       "packageUri": "lib/",
       "languageVersion": "2.17"
     },
     {
       "name": "shared_preferences_foundation",
-      "rootUri": "file:///Users/apple/.pub-cache/hosted/pub.dev/shared_preferences_foundation-2.2.0",
+      "rootUri": "file:///Users/apple/.pub-cache/hosted/pub.dev/shared_preferences_foundation-2.2.1",
       "packageUri": "lib/",
       "languageVersion": "2.17"
     },
@@ -489,7 +489,7 @@
     },
     {
       "name": "win32",
-      "rootUri": "file:///Users/apple/.pub-cache/hosted/pub.dev/win32-3.1.3",
+      "rootUri": "file:///Users/apple/.pub-cache/hosted/pub.dev/win32-3.1.4",
       "packageUri": "lib/",
       "languageVersion": "2.17"
     },
@@ -501,9 +501,9 @@
     },
     {
       "name": "xml",
-      "rootUri": "file:///Users/apple/.pub-cache/hosted/pub.dev/xml-6.1.0",
+      "rootUri": "file:///Users/apple/.pub-cache/hosted/pub.dev/xml-6.2.2",
       "packageUri": "lib/",
-      "languageVersion": "2.17"
+      "languageVersion": "2.18"
     },
     {
       "name": "image2pdf_flutter",
@@ -512,7 +512,7 @@
       "languageVersion": "2.18"
     }
   ],
-  "generated": "2023-04-21T07:10:33.398808Z",
+  "generated": "2023-04-21T07:50:54.148236Z",
   "generator": "pub",
   "generatorVersion": "2.19.6"
 }

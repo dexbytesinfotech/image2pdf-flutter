@@ -1,7 +1,7 @@
 name: image2pdf_flutter
 description: This library is divided into two parts a low-level Pdf creation library that takes care of the pdf bits generation.
              - a Widgets system similar to Flutter's, for easy high-level Pdf creation.
-version: 1.0.0
+version: 1.0.0+1
 homepage: https://github.com/dexbytes
 repository: https://github.com/dexbytesinfotech/image2pdf-flutter.git
 

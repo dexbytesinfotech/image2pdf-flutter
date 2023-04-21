@@ -97,7 +97,7 @@ class PackageUtil {
     Directory tempDir = await getTemporaryDirectory();
     try {
       tempDir.createSync();
-      final file = File("${tempDir.path}/${documentName}.pdf");
+      final file = File("${tempDir.path}/$documentName.pdf");
       await file.writeAsBytes(await pdf.save());
       pdfPath = file.path;
     } catch (e) {}

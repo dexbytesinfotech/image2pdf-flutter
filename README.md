@@ -1,12 +1,9 @@
-# Pdf creation library for dart/flutter
+# PDF creation library for dart/flutter
 
 This library is divided into two parts:
 
-- a low-level Pdf creation library that takes care of the pdf bits generation.
-- a Widgets system similar to Flutter's, for easy high-level Pdf creation.
-
-It can create a full multi-pages document with graphics,
-images, and text using TrueType fonts. With the ease of use you already know.
+- a low-level PDF creation library that takes care of the PDF bits generation.
+- a Widgets system similar to Flutter's, for easy high-level PDF creation.
 
 |               | Android   | iOS    |
 | :-------------| :---------| :------|
@@ -19,7 +16,7 @@ images, and text using TrueType fonts. With the ease of use you already know.
 Use this plugin in your Flutter app to:
 
 * Create Pfd with multi pages by selecting images.
-* Share created pdf.
+* Share created PDF.
 
 ## Getting started
 
@@ -27,12 +24,12 @@ This plugin relies on the flutter core.
 
 ## Usage
 
-To use the plugin you just need to add image2pdf-flutter: ^1.0.0+2 into your pubspec.yaml file and run
+To use the plugin you just need to add image2pdf-flutter: ^1.0.0+3 into your pubspec.yaml file and run
 pub get.
 
 ## Add following into your package's pubspec.yaml (and run an implicit dart pub get):
 
-image2pdf-flutter: ^1.0.0+2
+image2pdf-flutter: ^1.0.0+3
 
 ## Multi Step Form UI Sample
 

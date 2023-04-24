@@ -648,11 +648,16 @@ class _CameraExampleHomeState extends State<CameraExampleHome>
           Expanded(
               flex: 5,
               child: cameraButton(() {
-                cameraController != null &&
+                /*cameraController != null &&
                         cameraController.value.isInitialized &&
                         !cameraController.value.isRecordingVideo
                     ? onTakePictureButtonPressed()
-                    : null;
+                    : null;*/
+                if (cameraController != null &&
+                    cameraController.value.isInitialized &&
+                    !cameraController.value.isRecordingVideo) {
+                  onTakePictureButtonPressed();
+                }
               })),
           Expanded(flex: 11, child: _thumbnailWidget())
         ],

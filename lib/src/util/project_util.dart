@@ -1,11 +1,10 @@
 import 'dart:convert';
 import 'dart:io';
 
+import 'package:image2pdf_flutter/image_to_pdf.dart';
 import 'package:image2pdf_flutter/src/util/shared_pref.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:pdf/widgets.dart' as pw;
-
-import '../../parts.dart';
 
 class PackageUtil {
   static Map<String, DocumentPathModel> documentList = {};

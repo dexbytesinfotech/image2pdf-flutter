@@ -1,5 +1,6 @@
 part of image2pdf_flutter;
 
+/// Developer calls of the Open PDF generator home screen
 class ImageToPdfMain extends StatelessWidget {
   final Function(String)? pdfPathCallBack;
 

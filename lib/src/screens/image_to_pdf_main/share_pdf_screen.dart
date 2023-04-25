@@ -1,5 +1,6 @@
 part of image2pdf_flutter;
 
+/// Developer calls the screen to display PDF images and share generated PDF file.
 class SharePdfScreen extends StatefulWidget {
   final String selectedDocumentId;
   final Function(String)? pdfPathCallBack;

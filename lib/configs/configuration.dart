@@ -1,5 +1,6 @@
 part of image2pdf_flutter;
 
+/// Developer will set pages background, TextStyle, and icon from this configuration class.
 class Configuration {
   ///One instance, needs factory
   static Configuration? instance = new Configuration._();

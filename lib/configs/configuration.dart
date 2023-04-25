@@ -1,11 +1,10 @@
 part of image2pdf_flutter;
 
 class Configuration {
-  //One instance, needs factory
+  ///One instance, needs factory
   static Configuration? instance = new Configuration._();
   factory Configuration() => instance ??= new Configuration._();
   Configuration._();
-  //
 
   Widget? cameraIcon;
   TextStyle documentListTextStyle =

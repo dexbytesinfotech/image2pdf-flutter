@@ -28,14 +28,15 @@ IconData getCameraLensIcon(CameraLensDirection direction) {
     case CameraLensDirection.external:
       return Icons.camera;
   }
-  // This enum is from a different package, so a new value could be added at
-  // any time. The example should keep working if that happens.
-  // ignore: dead_code
+
+  /// This enum is from a different package, so a new value could be added at
+  /// any time. The example should keep working if that happens.
+  /// ignore: dead_code
   return Icons.camera;
 }
 
 void _logError(String code, String? message) {
-  // ignore: avoid_print
+  /// ignore: avoid_print
   print('Error: $code${message == null ? '' : '\nError Message: $message'}');
 }
 
@@ -63,7 +64,7 @@ class _CameraExampleHomeState extends State<CameraExampleHome>
   double _currentScale = 1.0;
   double _baseScale = 1.0;
 
-  // Counting pointers (number of user fingers on screen)
+  /// Counting pointers (number of user fingers on screen)
   int _pointers = 0;
   Color iconColors = Colors.white;
   CameraDescription? currentCameraDescription;
@@ -121,12 +122,12 @@ class _CameraExampleHomeState extends State<CameraExampleHome>
     super.dispose();
   }
 
-  // #docregion AppLifecycle
+  /// #docregion AppLifecycle
   @override
   void didChangeAppLifecycleState(AppLifecycleState state) {
     final CameraController? cameraController = controller;
 
-    // App state changed before we got the chance to initialize.
+    /// App state changed before we got the chance to initialize.
     if (cameraController == null || !cameraController.value.isInitialized) {
       return;
     }
@@ -138,8 +139,7 @@ class _CameraExampleHomeState extends State<CameraExampleHome>
     }
   }
 
-  // #enddocregion AppLifecycle
-
+  /// #enddocregion AppLifecycle
   @override
   Widget build(BuildContext context) {
     final CameraController? cameraController = controller;
@@ -198,7 +198,6 @@ class _CameraExampleHomeState extends State<CameraExampleHome>
             ),
           ),
           _captureControlRowWidget(),
-          // _modeControlRowWidget(),
           Padding(
             padding: const EdgeInsets.all(0.0),
             child: Row(
@@ -245,7 +244,7 @@ class _CameraExampleHomeState extends State<CameraExampleHome>
   }
 
   Future<void> _handleScaleUpdate(ScaleUpdateDetails details) async {
-    // When there are not exactly two fingers on screen don't scale
+    /// When there are not exactly two fingers on screen don't scale
     if (controller == null || _pointers != 2) {
       return;
     }
@@ -256,6 +255,7 @@ class _CameraExampleHomeState extends State<CameraExampleHome>
     await controller!.setZoomLevel(_currentScale);
   }
 
+  ///Image file count
   Widget fileCount(int count) {
     return Container(
       height: 20,
@@ -372,7 +372,8 @@ class _CameraExampleHomeState extends State<CameraExampleHome>
               color: Colors.blue,
               onPressed: controller != null ? onFlashModeButtonPressed : null,
             ),
-            // The exposure and focus mode are currently not supported on the web.
+
+            /// The exposure and focus mode are currently not supported on the web.
             ...!kIsWeb
                 ? <Widget>[
                     IconButton(
@@ -461,15 +462,15 @@ class _CameraExampleHomeState extends State<CameraExampleHome>
 
   Widget _exposureModeControlRowWidget() {
     final ButtonStyle styleAuto = TextButton.styleFrom(
-      // TODO(darrenaustin): Migrate to new API once it lands in stable: https://github.com/flutter/flutter/issues/105724
-      // ignore: deprecated_member_use
+      /// TODO(darrenaustin): Migrate to new API once it lands in stable: https://github.com/flutter/flutter/issues/105724
+      /// ignore: deprecated_member_use
       primary: controller?.value.exposureMode == ExposureMode.auto
           ? Colors.orange
           : Colors.blue,
     );
     final ButtonStyle styleLocked = TextButton.styleFrom(
-      // TODO(darrenaustin): Migrate to new API once it lands in stable: https://github.com/flutter/flutter/issues/105724
-      // ignore: deprecated_member_use
+      /// TODO(darrenaustin): Migrate to new API once it lands in stable: https://github.com/flutter/flutter/issues/105724
+      /// ignore: deprecated_member_use
       primary: controller?.value.exposureMode == ExposureMode.locked
           ? Colors.orange
           : Colors.blue,
@@ -548,15 +549,15 @@ class _CameraExampleHomeState extends State<CameraExampleHome>
 
   Widget _focusModeControlRowWidget() {
     final ButtonStyle styleAuto = TextButton.styleFrom(
-      // TODO(darrenaustin): Migrate to new API once it lands in stable: https://github.com/flutter/flutter/issues/105724
-      // ignore: deprecated_member_use
+      /// TODO(darrenaustin): Migrate to new API once it lands in stable: https://github.com/flutter/flutter/issues/105724
+      /// ignore: deprecated_member_use
       primary: controller?.value.focusMode == FocusMode.auto
           ? Colors.orange
           : Colors.blue,
     );
     final ButtonStyle styleLocked = TextButton.styleFrom(
-      // TODO(darrenaustin): Migrate to new API once it lands in stable: https://github.com/flutter/flutter/issues/105724
-      // ignore: deprecated_member_use
+      /// TODO(darrenaustin): Migrate to new API once it lands in stable: https://github.com/flutter/flutter/issues/105724
+      /// ignore: deprecated_member_use
       primary: controller?.value.focusMode == FocusMode.locked
           ? Colors.orange
           : Colors.blue,
@@ -702,7 +703,7 @@ class _CameraExampleHomeState extends State<CameraExampleHome>
       }
     }
 
-    //Auto turn on camera
+    ///Auto turn on camera
     if (currentCameraDescription == null && _cameras.isNotEmpty) {
       currentCameraDescription = _cameras[0];
       onChanged(currentCameraDescription);
@@ -768,7 +769,7 @@ class _CameraExampleHomeState extends State<CameraExampleHome>
     try {
       await cameraController.initialize();
       await Future.wait(<Future<Object?>>[
-        // The exposure mode is currently not supported on the web.
+        /// The exposure mode is currently not supported on the web.
         ...!kIsWeb
             ? <Future<Object?>>[
                 cameraController.getMinExposureOffset().then(
@@ -791,22 +792,26 @@ class _CameraExampleHomeState extends State<CameraExampleHome>
           showInSnackBar('You have denied camera access.');
           break;
         case 'CameraAccessDeniedWithoutPrompt':
-          // iOS only
+
+          /// iOS only
           showInSnackBar('Please go to Settings app to enable camera access.');
           break;
         case 'CameraAccessRestricted':
-          // iOS only
+
+          /// iOS only
           showInSnackBar('Camera access is restricted.');
           break;
         case 'AudioAccessDenied':
           showInSnackBar('You have denied audio access.');
           break;
         case 'AudioAccessDeniedWithoutPrompt':
-          // iOS only
+
+          /// iOS only
           showInSnackBar('Please go to Settings app to enable audio access.');
           break;
         case 'AudioAccessRestricted':
-          // iOS only
+
+          /// iOS only
           showInSnackBar('Audio access is restricted.');
           break;
         default:
@@ -821,9 +826,9 @@ class _CameraExampleHomeState extends State<CameraExampleHome>
   }
 
   void onTakePictureFromGallery() {
-    // Pick multiple images.
-    // final List<XFile> images = await ImagePicker().pickMultiImage();
-    // Pick an image.
+    /// Pick multiple images.
+    /// final List<XFile> images = await ImagePicker().pickMultiImage();
+    /// Pick an image.
     ImagePicker()
         .pickImage(source: ImageSource.gallery)
         .then((XFile? file) async {
@@ -853,8 +858,8 @@ class _CameraExampleHomeState extends State<CameraExampleHome>
           ],
         );
 
-        // Construct the path where the image should be saved using the
-        // pattern package.
+        /// Construct the path where the image should be saved using the
+        /// pattern package.
         String filePath = croppedFile!.path;
 /*        try {
           String fileName = file!.path;
@@ -887,7 +892,7 @@ class _CameraExampleHomeState extends State<CameraExampleHome>
             documentUniqueName = "New Document $documentSavedTime";
           }
 
-          //Add old images in old Document
+          /// Add old images in old Document
           if (widget.selectedDocumentId.isNotEmpty) {
             documentUniqueId = widget.selectedDocumentId;
             List<dynamic> imageFileListTemp = packageUtil
@@ -911,7 +916,7 @@ class _CameraExampleHomeState extends State<CameraExampleHome>
               documentSaveDateAndTime: documentSavedTime);
         });
 
-        //Close camera automatic in case of add document from document grid
+        /// Close camera automatic in case of add document from document grid
         if (widget.selectedDocumentId.isNotEmpty) {
           Timer(Duration(milliseconds: 500), () {
             if (mounted && buildContext != null) {
@@ -954,8 +959,8 @@ class _CameraExampleHomeState extends State<CameraExampleHome>
           ],
         );
 
-        // Construct the path where the image should be saved using the
-        // pattern package.
+        /// Construct the path where the image should be saved using the
+        /// pattern package.
         String filePath = croppedFile!.path;
 /*        try {
           String fileName = file!.path;
@@ -988,7 +993,7 @@ class _CameraExampleHomeState extends State<CameraExampleHome>
             documentUniqueName = "New Document $documentSavedTime";
           }
 
-          //Add old images in old Document
+          ///Add old images in old Document
           if (widget.selectedDocumentId.isNotEmpty) {
             documentUniqueId = widget.selectedDocumentId;
             List<dynamic> imageFileListTemp = packageUtil
@@ -1012,7 +1017,7 @@ class _CameraExampleHomeState extends State<CameraExampleHome>
               documentSaveDateAndTime: documentSavedTime);
         });
 
-        //Close camera automatic in case of add document from document grid
+        /// Close camera automatic in case of add document from document grid
         if (widget.selectedDocumentId.isNotEmpty) {
           Timer(Duration(milliseconds: 500), () {
             if (mounted && buildContext != null) {
@@ -1179,7 +1184,7 @@ class _CameraExampleHomeState extends State<CameraExampleHome>
     }
 
     if (cameraController.value.isRecordingVideo) {
-      // A recording is already started, do nothing.
+      /// A recording is already started, do nothing.
       return;
     }
 
@@ -1299,7 +1304,7 @@ class _CameraExampleHomeState extends State<CameraExampleHome>
     }
 
     if (cameraController.value.isTakingPicture) {
-      // A capture is already pending, do nothing.
+      /// A capture is already pending, do nothing.
       return null;
     }
 

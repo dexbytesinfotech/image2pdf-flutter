@@ -125,6 +125,7 @@ class _SharePdfScreenState extends State<SharePdfScreen> {
     );
   }
 
+  ///Close icon
   Widget closeWidget(int index) {
     return Align(
       alignment: Alignment.topRight,
@@ -151,11 +152,12 @@ class _SharePdfScreenState extends State<SharePdfScreen> {
     );
   }
 
-  //Update Document name
+  ///Update Document name
   updatePdfName() {
     packageUtil.updatePdfName(document!.documentSaveId!, documentName!);
   }
 
+  ///Done click
   onDoneClick() {
     String updateName = controller.text.toString().trim();
     if (updateName.isNotEmpty &&
@@ -167,6 +169,7 @@ class _SharePdfScreenState extends State<SharePdfScreen> {
     }
   }
 
+  ///App bar input field
   Widget nameInput() {
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 8, vertical: 16),
@@ -256,7 +259,6 @@ class _SharePdfScreenState extends State<SharePdfScreen> {
                           if (index < documentCount! - 1) {
                             filePath = documentImagePathList![index];
                           }
-
                           return filePath.isNotEmpty
                               ? Card(
                                   color: Configuration.instance!.imageBgColor,
@@ -332,6 +334,7 @@ class _SharePdfScreenState extends State<SharePdfScreen> {
     );
   }
 
+  ///Share created PDF
   sharePdf() async {
     if (pdfPathToShare.isEmpty) {
       showLoaderDialog(context);
@@ -352,6 +355,7 @@ class _SharePdfScreenState extends State<SharePdfScreen> {
     );
   }
 
+  /// Show loader while generating image to PDF
   showLoaderDialog(BuildContext context) {
     AlertDialog alert = AlertDialog(
       content: new Column(
@@ -359,7 +363,7 @@ class _SharePdfScreenState extends State<SharePdfScreen> {
         children: [
           CircularProgressIndicator(),
           Container(
-              margin: EdgeInsets.only(left: 7), child: Text("Preparing pdf..")),
+              margin: EdgeInsets.only(left: 7), child: Text("Preparing PDF..")),
         ],
       ),
     );

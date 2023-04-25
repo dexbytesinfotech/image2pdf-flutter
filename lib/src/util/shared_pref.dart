@@ -4,6 +4,7 @@ class LocalStorage {
   final Future<SharedPreferences> _prefs = SharedPreferences.getInstance();
   static SharedPreferences? prefs;
 
+  ///Clear shared preferences data
   clearAll() async {
     try {
       final prefs = await SharedPreferences.getInstance();
@@ -13,6 +14,7 @@ class LocalStorage {
     }
   }
 
+  ///Store String value
   Future<bool> saveStr(keys, values) async {
     try {
       final prefs = await SharedPreferences.getInstance();
@@ -27,6 +29,7 @@ class LocalStorage {
     }
   }
 
+  ///Read stored string value
   Future<String> readStr(keys) async {
     try {
       final prefs = await SharedPreferences.getInstance();
@@ -41,7 +44,7 @@ class LocalStorage {
     }
   }
 
-  /*Get stored local form from device */
+  ///Get stored local form from device
   Future<String>? getFormDataLocal() async {
     String? formData = "";
     try {
@@ -54,7 +57,7 @@ class LocalStorage {
     return formData;
   }
 
-  /*Store form data local device*/
+  ///Store form data local device
   Future<String>? storeFormDataLocal(String formJson) async {
     String? formData = "";
     try {

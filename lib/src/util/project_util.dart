@@ -10,7 +10,7 @@ class PackageUtil {
   static Map<String, DocumentPathModel> documentList = {};
   static Map<String, dynamic> documentListTemp = {};
 
-  //Store new Document in local
+  ///Store new Document in local
   set storeDocumentInLocal(DocumentPathModel value) {
     String key = value.documentSaveId!;
     documentList[key] = value;
@@ -19,7 +19,7 @@ class PackageUtil {
     localStorage.saveStr("image2pdf_flutter_data_list", encodedData);
   }
 
-  //Delete document from local
+  ///Delete document from local
   set deleteDocument(DocumentPathModel value) {
     String key = value.documentSaveId!;
     if (value.documentImagePathList!.isEmpty) {
@@ -31,7 +31,7 @@ class PackageUtil {
     localStorage.saveStr("image2pdf_flutter_data_list", encodedData);
   }
 
-  //Update PDF name
+  ///Update PDF name
   bool updatePdfName(String documentId, String documentName) {
     try {
       String key = documentId;
@@ -49,6 +49,7 @@ class PackageUtil {
     return false;
   }
 
+  ///Get saved data from local
   Future<dynamic> getDataListFromLocal() async {
     try {
       String value = await localStorage.readStr("image2pdf_flutter_data_list");
@@ -63,10 +64,13 @@ class PackageUtil {
     }
   }
 
+  ///Return document map
   Map<String, DocumentPathModel> get getDataList => documentList;
 
+  ///Generate image to PDF
   Future<String> pdfGenerator(List<dynamic> filesPathList,
       {String documentName = "", Function(double)? progressCallBac}) async {
+    ///Remove some spacial symbols
     documentName = documentName.replaceAll(' ', '');
     if (documentName.contains(":")) {
       documentName = documentName.replaceAll(':', '_');
@@ -93,6 +97,8 @@ class PackageUtil {
       currentProgress += perFileProgress;
       progressCallBac?.call(currentProgress);
     }
+
+    ///Get file path from local directory
     Directory tempDir = await getTemporaryDirectory();
     try {
       tempDir.createSync();

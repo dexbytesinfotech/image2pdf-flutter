@@ -10,7 +10,7 @@ class ImageToPdfMain extends StatelessWidget {
     return MaterialApp(home: ImageToPdfHome(pdfPathCallBack: pdfPathCallBack));
   }
 
-  //Init value
+  ///Init value
   static Future<void> initValue() async {
     await packageUtil.getDataListFromLocal();
     return;
@@ -19,19 +19,19 @@ class ImageToPdfMain extends StatelessWidget {
 
 final Map<String, DocumentPathModel> documentList = {};
 
-//Set Document details
+///Set Document details
 set setDocument(DocumentPathModel value) {
   String key = value.documentSaveId!;
   packageUtil.storeDocumentInLocal = value;
   documentList[key] = value;
 }
 
-//Return document list
+///Return document list
 List<DocumentPathModel> get getDocumentList {
   return packageUtil.getDataList.values.toList();
 }
 
-//Return document list
+///Return document
 DocumentPathModel? getSelectedDocument(String documentId) {
   return packageUtil.getDataList[documentId];
 }
@@ -108,6 +108,7 @@ class _ImageToPdfHomeState extends State<ImageToPdfHome> {
                                   ? SizedBox()
                                   : InkWell(
                                       onTap: () {
+                                        ///Redirect to share pdf list screen
                                         Navigator.push(
                                             context,
                                             MaterialPageRoute(
@@ -162,6 +163,7 @@ class _ImageToPdfHomeState extends State<ImageToPdfHome> {
                     child: Configuration.instance!.cameraIcon != null
                         ? InkWell(
                             onTap: () {
+                              ///Redirect to open camera
                               Navigator.push(
                                   context,
                                   MaterialPageRoute(
@@ -180,6 +182,7 @@ class _ImageToPdfHomeState extends State<ImageToPdfHome> {
                             backgroundColor:
                                 Configuration.instance!.cameraIconBgColor,
                             onPressed: () {
+                              ///Redirect to open camera
                               Navigator.push(
                                   context,
                                   MaterialPageRoute(
@@ -207,6 +210,7 @@ class _ImageToPdfHomeState extends State<ImageToPdfHome> {
   }
 }
 
+///Document model to store images
 class DocumentPathModel {
   String? documentName;
   String? documentSaveDateAndTime;
@@ -236,7 +240,7 @@ class DocumentPathModel {
   }
 }
 
-//Get shar
+///Get shar
 get shareablePdfLink {
   String path = "";
 

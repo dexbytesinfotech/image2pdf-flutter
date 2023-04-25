@@ -24,12 +24,12 @@ This plugin relies on the flutter core.
 
 ## Usage
 
-To use the plugin you just need to add image2pdf-flutter: ^1.0.0+3 into your pubspec.yaml file and run
+To use the plugin you just need to add image2pdf-flutter: ^1.0.0+4 into your pubspec.yaml file and run
 pub get.
 
 ## Add following into your package's pubspec.yaml (and run an implicit dart pub get):
 
-image2pdf-flutter: ^1.0.0+3
+image2pdf-flutter: ^1.0.0+4
 
 ## Multi Step Form UI Sample
 

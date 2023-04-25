@@ -1,3 +1,7 @@
+## [1.0.0+4] - 25/04/2023
+
+* TODO: Document update.
+
 ## [1.0.0+3] - 24/04/2023
 
 * TODO: Ui update.

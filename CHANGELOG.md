@@ -1,3 +1,7 @@
+## [1.0.0+7] - 25/04/2023
+
+* TODO: Document update.
+
 ## [1.0.0+6] - 25/04/2023
 
 * TODO: Document update.

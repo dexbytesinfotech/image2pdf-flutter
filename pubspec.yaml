@@ -1,6 +1,6 @@
 name: image2pdf_flutter
-description: This library is convert images to a PDF creation library that takes care of the PDF bits generation.
-version: 1.0.0+8
+description: This library converts images to a PDF, a PDF creation library that converter turns any image file into a custom PDF file.
+version: 1.0.0+9
 homepage: https://github.com/dexbytes
 repository: https://github.com/dexbytesinfotech/image2pdf-flutter.git
 

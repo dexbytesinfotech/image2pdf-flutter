@@ -1333,8 +1333,12 @@ class _CameraExampleHomeState extends State<CameraExampleHome>
 class Camera extends StatelessWidget {
   final String selectedDocumentId;
   final Function(String)? pdfPathCallBack;
-
-  const Camera({Key? key, this.selectedDocumentId = "", this.pdfPathCallBack})
+  final Function(Map<String, dynamic>)? saveCurrentDocumentCallBack;
+  const Camera(
+      {Key? key,
+      this.selectedDocumentId = "",
+      this.pdfPathCallBack,
+      this.saveCurrentDocumentCallBack})
       : super(key: key);
 
   @override
@@ -1343,7 +1347,8 @@ class Camera extends StatelessWidget {
     return MaterialApp(
       home: CameraExampleHome(
           selectedDocumentId: this.selectedDocumentId,
-          pdfPathCallBack: pdfPathCallBack),
+          pdfPathCallBack: pdfPathCallBack,
+          saveCurrentDocumentCallBack: saveCurrentDocumentCallBack),
     );
   }
 }

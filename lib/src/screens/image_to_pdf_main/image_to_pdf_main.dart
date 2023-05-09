@@ -39,9 +39,12 @@ DocumentPathModel? getSelectedDocument(String documentId) {
 
 class ImageToPdfHome extends StatefulWidget {
   final Function(String)? pdfPathCallBack;
+  final Function(Map<String, dynamic>)? saveCurrentDocumentCallBack;
 
   /// Default Constructor
-  const ImageToPdfHome({Key? key, this.pdfPathCallBack}) : super(key: key);
+  const ImageToPdfHome(
+      {Key? key, this.pdfPathCallBack, this.saveCurrentDocumentCallBack})
+      : super(key: key);
 
   @override
   State<ImageToPdfHome> createState() {
@@ -116,8 +119,11 @@ class _ImageToPdfHomeState extends State<ImageToPdfHome> {
                                                 builder: (_) => SharePdfScreen(
                                                     selectedDocumentId:
                                                         selectedDocumentId,
-                                                    pdfPathCallBack: widget
-                                                        .pdfPathCallBack))).then(
+                                                    pdfPathCallBack:
+                                                        widget.pdfPathCallBack,
+                                                    saveCurrentDocumentCallBack:
+                                                        widget
+                                                            .saveCurrentDocumentCallBack))).then(
                                             (value) {
                                           setState(() {
                                             documentList = getDocumentList;

@@ -6,10 +6,14 @@ BuildContext? buildContext;
 class CameraExampleHome extends StatefulWidget {
   final String selectedDocumentId;
   final Function(String)? pdfPathCallBack;
+  final Function(Map<String, dynamic>)? saveCurrentDocumentCallBack;
 
   /// Default Constructor
   const CameraExampleHome(
-      {Key? key, this.selectedDocumentId = "", this.pdfPathCallBack})
+      {Key? key,
+      this.selectedDocumentId = "",
+      this.pdfPathCallBack,
+      this.saveCurrentDocumentCallBack})
       : super(key: key);
 
   @override
@@ -324,7 +328,9 @@ class _CameraExampleHomeState extends State<CameraExampleHome>
                         MaterialPageRoute(
                             builder: (_) => SharePdfScreen(
                                 selectedDocumentId: documentUniqueId,
-                                pdfPathCallBack: widget.pdfPathCallBack)))
+                                pdfPathCallBack: widget.pdfPathCallBack,
+                                saveCurrentDocumentCallBack:
+                                    widget.saveCurrentDocumentCallBack)))
                     .then((value) => closeCameraScreen());
               },
               child: Row(

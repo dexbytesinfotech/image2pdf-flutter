@@ -4,10 +4,16 @@ part of image2pdf_flutter;
 class SharePdfScreen extends StatefulWidget {
   final String selectedDocumentId;
   final Function(String)? pdfPathCallBack;
+  final Function(Map<String, dynamic>)? currentDocumentCallBack;
+  final Function(Map<String, dynamic>)? saveCurrentDocumentCallBack;
 
   /// Default Constructor
   const SharePdfScreen(
-      {Key? key, required this.selectedDocumentId, this.pdfPathCallBack})
+      {Key? key,
+      required this.selectedDocumentId,
+      this.pdfPathCallBack,
+      this.currentDocumentCallBack,
+      this.saveCurrentDocumentCallBack})
       : super(key: key);
 
   @override
@@ -320,19 +326,35 @@ class _SharePdfScreenState extends State<SharePdfScreen> {
               alignment: Alignment.bottomRight,
               child: Container(
                 padding: EdgeInsets.only(right: 10, bottom: 10),
-                child: FloatingActionButton(
-                  backgroundColor: Configuration.instance!.shareIconBgColor,
-                  onPressed: () {
-                    sharePdf();
-                  },
-                  child: Configuration.instance!.shareIcon,
-                ),
+                child: widget.saveCurrentDocumentCallBack != null
+                    ? FloatingActionButton(
+                        backgroundColor:
+                            Configuration.instance!.shareIconBgColor,
+                        onPressed: () {
+                          saveAndCallBack();
+                        },
+                        child: Configuration.instance!.saveIcon,
+                      )
+                    : FloatingActionButton(
+                        backgroundColor:
+                            Configuration.instance!.shareIconBgColor,
+                        onPressed: () {
+                          sharePdf();
+                        },
+                        child: Configuration.instance!.shareIcon,
+                      ),
               ),
             )
           ],
         ),
       ),
     );
+  }
+
+  saveAndCallBack() {
+    Map<String, dynamic> documentDetails = document!.toJson();
+    widget.saveCurrentDocumentCallBack?.call(documentDetails);
+    Navigator.pop(context, true);
   }
 
   ///Share created PDF

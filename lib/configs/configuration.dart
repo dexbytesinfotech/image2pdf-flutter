@@ -27,6 +27,12 @@ class Configuration {
     color: Colors.white,
     size: 30,
   );
+
+  Widget saveIcon = Icon(
+    Icons.save,
+    color: Colors.white,
+    size: 30,
+  );
   Widget editPdfNameEditIcon = Icon(Icons.edit, color: Colors.white);
   Widget editPdfNameSaveIcon = Icon(Icons.save, color: Colors.white);
   Widget backArrowIcon = Icon(Icons.arrow_back_ios_sharp, color: Colors.white);

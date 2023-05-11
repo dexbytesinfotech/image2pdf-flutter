@@ -38,7 +38,7 @@ class _SharePdfScreenState extends State<SharePdfScreen> {
 
   _SharePdfScreenState({required this.selectedDocumentId}) {
     document = getSelectedDocument(this.selectedDocumentId);
-    if (document != null) {
+    if (document == null) {
       document = DocumentPathModel();
     }
     documentName = document!.documentName ?? "";

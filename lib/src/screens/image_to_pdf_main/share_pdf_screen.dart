@@ -43,10 +43,7 @@ class _SharePdfScreenState extends State<SharePdfScreen> {
     }
     documentName = document!.documentName ?? "";
     documentImagePathList = document!.documentImagePathList ?? [];
-    documentCount =
-        documentImagePathList == null || documentImagePathList!.isEmpty
-            ? 0
-            : documentImagePathList!.length + 1;
+    documentCount = documentImagePathList!.length + 1;
     controller.text = documentName ?? "";
   }
 

@@ -38,9 +38,15 @@ class _SharePdfScreenState extends State<SharePdfScreen> {
 
   _SharePdfScreenState({required this.selectedDocumentId}) {
     document = getSelectedDocument(this.selectedDocumentId);
+    if (document != null) {
+      document = DocumentPathModel();
+    }
     documentName = document!.documentName;
     documentImagePathList = document!.documentImagePathList;
-    documentCount = documentImagePathList!.length + 1;
+    documentCount =
+        documentImagePathList == null || documentImagePathList!.isEmpty
+            ? 0
+            : documentImagePathList!.length + 1;
     controller.text = documentName!;
   }
 
@@ -80,12 +86,18 @@ class _SharePdfScreenState extends State<SharePdfScreen> {
                                 pdfPathCallBack: widget.pdfPathCallBack))).then(
                         (value) {
                       // Navigator.pop(context);
-                      setState(() {
-                        document = getSelectedDocument(this.selectedDocumentId);
-                        documentName = document!.documentName;
-                        documentImagePathList = document!.documentImagePathList;
-                        documentCount = documentImagePathList!.length + 1;
-                      });
+                      try {
+                        setState(() {
+                          document =
+                              getSelectedDocument(this.selectedDocumentId);
+                          documentName = document!.documentName;
+                          documentImagePathList =
+                              document!.documentImagePathList;
+                          documentCount = documentImagePathList!.length + 1;
+                        });
+                      } catch (e) {
+                        print(e);
+                      }
                     });
                   },
                   child: Align(

@@ -41,7 +41,7 @@ class _SharePdfScreenState extends State<SharePdfScreen> {
     if (document != null) {
       document = DocumentPathModel();
     }
-    documentName = document!.documentName;
+    documentName = document!.documentName ?? "";
     documentImagePathList = document!.documentImagePathList;
     documentCount =
         documentImagePathList == null || documentImagePathList!.isEmpty

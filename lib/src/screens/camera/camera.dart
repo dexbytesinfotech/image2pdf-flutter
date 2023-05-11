@@ -1002,12 +1002,16 @@ class _CameraExampleHomeState extends State<CameraExampleHome>
           ///Add old images in old Document
           if (widget.selectedDocumentId.isNotEmpty) {
             documentUniqueId = widget.selectedDocumentId;
-            List<dynamic> imageFileListTemp = packageUtil
-                .getDataList["$documentUniqueId"]!.documentImagePathList!;
-            imageFileList =
-                imageFileListTemp.map((value) => value as String).toList();
+            List<dynamic> imageFileListTemp =
+                packageUtil.getDataList.containsKey("$documentUniqueId")
+                    ? packageUtil.getDataList["$documentUniqueId"]!
+                        .documentImagePathList!
+                    : [];
+            if (imageFileListTemp.isNotEmpty) {
+              imageFileList =
+                  imageFileListTemp.map((value) => value as String).toList();
+            }
           }
-
           imageFileList!.add(filePath);
 
           Map<String, dynamic> json = {};

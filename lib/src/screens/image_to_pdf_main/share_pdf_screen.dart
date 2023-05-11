@@ -47,7 +47,7 @@ class _SharePdfScreenState extends State<SharePdfScreen> {
         documentImagePathList == null || documentImagePathList!.isEmpty
             ? 0
             : documentImagePathList!.length + 1;
-    controller.text = documentName!;
+    controller.text = documentName ?? "";
   }
 
   @override

@@ -207,7 +207,7 @@
     },
     {
       "name": "intl",
-      "rootUri": "file:///Users/apple/flutter/flutter_sdk/flutter/.pub-cache/hosted/pub.dartlang.org/intl-0.18.1",
+      "rootUri": "file:///Users/apple/flutter/flutter_sdk/flutter/.pub-cache/hosted/pub.dartlang.org/intl-0.17.0",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -512,7 +512,7 @@
       "languageVersion": "2.18"
     }
   ],
-  "generated": "2023-05-09T07:14:05.618360Z",
+  "generated": "2023-05-11T10:55:17.174190Z",
   "generator": "pub",
   "generatorVersion": "2.18.5"
 }

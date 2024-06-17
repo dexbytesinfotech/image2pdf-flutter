@@ -1,3 +1,7 @@
+## [1.0.1] - 17/06/2024
+
+* Dart package update
+
 ## [1.0.0+9] - 03/05/2023
 
 * TODO: Document update.

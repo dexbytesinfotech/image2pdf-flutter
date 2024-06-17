@@ -1,12 +1,11 @@
 name: image2pdf_flutter
 description: This library converts images to a PDF, a PDF creation library that converter turns any image file into a custom PDF file.
-version: 1.0.0+9
+version: 1.0.1
 homepage: https://github.com/dexbytes
 repository: https://github.com/dexbytesinfotech/image2pdf-flutter.git
 
 environment:
-#  sdk: '>=2.19.5 <3.0.0'
-  sdk: '>=2.18.2 <3.0.0'
+  sdk: '>=3.4.1 <4.0.0'
   flutter: ">=1.17.0"
 
 analyzer:
@@ -18,18 +17,18 @@ dependencies:
     sdk: flutter
   pdf: ^3.4.0
   path_provider: ^2.0.2
-  camera: ^0.10.3+2
-  image_cropper: ^3.0.2
+  camera: ^0.11.0+1
+  image_cropper: ^7.0.5
   shared_preferences: ^2.0.5
-  intl: ^0.17.0
-  path_drawing: ^0.5.1
-  share_plus: ^6.3.2
-  image_picker: ^0.8.7+3
+  intl: ^0.19.0
+  path_drawing: ^1.0.1
+  share_plus: ^9.0.0
+  image_picker: ^1.1.2
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-
+  lints: ^4.0.0
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
 

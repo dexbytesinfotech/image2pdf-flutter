@@ -572,10 +572,10 @@
       "languageVersion": "3.4"
     }
   ],
-  "generated": "2024-06-17T11:39:31.597605Z",
+  "generated": "2024-09-17T08:14:13.619486Z",
   "generator": "pub",
-  "generatorVersion": "3.4.1",
+  "generatorVersion": "3.4.3",
   "flutterRoot": "file:///Users/dexbytes_ultra/flutter_SDK/flutter",
-  "flutterVersion": "3.22.1",
+  "flutterVersion": "3.22.2",
   "pubCache": "file:///Users/dexbytes_ultra/.pub-cache"
 }
